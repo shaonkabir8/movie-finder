@@ -1,7 +1,8 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle'
-
+import Header from './Header';
 
 // Define Theme Options
 const theme = {
@@ -19,10 +20,12 @@ const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <div className="wrapperr">
-        Movie Finder Application
-      </div>
+      <BrowserRouter>
+        <GlobalStyle />
+        <div className="wrapperr">
+          <Header />
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }
